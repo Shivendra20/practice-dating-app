@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using SQLitePCL;
 
 namespace API.Controllers;
-[Authorize]
 [ApiController]
 [Route("api/[controller]")] // api/users
 public class UsersController : BaseApiController
