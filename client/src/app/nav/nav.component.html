@@ -11,8 +11,20 @@
           <li class="nav-item">
             <a class="nav-link">List</a>
           </li>
+          <li *ngIf="loggedIn" class="nav-item">
+            <a class="nav-link" (click)="logout()">Logout</a>
+          </li>
         </ul>
-        <form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
+
+        <div *ngIf="loggedIn" class="dropdown">
+          <a class="dropdown-toggle test-text">Welcome user</a>
+          <div class="downdown-menu">
+            <a class="dropdown-item">Edit Profile</a>
+            <a class="dropdown-item" (click)="logout()">Logout</a>
+          </div>
+        </div>
+
+        <form *ngIf="!loggedIn" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
           <input 
             name="Username"
             class="form-control me-2" 
