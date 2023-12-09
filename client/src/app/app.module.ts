@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './nav/nav.component';
 import { FormsModule } from '@angular/forms';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { BsDropdownDirective, BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationLogComponent } from "./notification-log/notification-log.component";
+import { BodyComponent } from './body/body.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        NavComponent
+        NavComponent,
+        BodyComponent,
+        HomeComponent
     ],
-    providers: [],
+    providers: [BsDropdownDirective, NgbModule],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,

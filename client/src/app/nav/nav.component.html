@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top nav-back">
     <div class="container">
       <a class="navbar-brand" href="#">Dating App</a>
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
@@ -11,20 +11,24 @@
           <li class="nav-item">
             <a class="nav-link">List</a>
           </li>
-          <li *ngIf="loggedIn" class="nav-item">
+          <li *ngIf="currentUser$ | async" class="nav-item">
             <a class="nav-link" (click)="logout()">Logout</a>
           </li>
         </ul>
+        
+         <div *ngIf="currentUser$ | async">
 
-        <div *ngIf="loggedIn" class="dropdown">
-          <a class="dropdown-toggle test-text">Welcome user</a>
-          <div class="downdown-menu">
+         </div>
+
+        <div *ngIf="currentUser$ | async" class="dropdown">
+          <a class="dropdown-toggle test-light text-decoration-none" dropdownToggle>Welcome user</a>
+          <div class="downdown-menu mt-3" *dropdownMenu>
             <a class="dropdown-item">Edit Profile</a>
             <a class="dropdown-item" (click)="logout()">Logout</a>
           </div>
         </div>
 
-        <form *ngIf="!loggedIn" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
+        <form *ngIf="!(currentUser$ | async)" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
           <input 
             name="Username"
             class="form-control me-2" 
@@ -35,12 +39,12 @@
           >
           <input 
             name="password"
-            class="form-control me-2"
+            class="form-control me-2 pw"
             type="text" 
             placeholder="Password"
             [(ngModel)]="model.Password"
           >
-          <button class="btn btn-outline-success" type="submit">Login</button>
+          <button class="btn btn-outline-success btn-login" type="submit">Login</button>
         </form>
       </div>
   </nav>

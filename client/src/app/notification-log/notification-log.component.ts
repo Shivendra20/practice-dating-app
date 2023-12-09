@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbAlertModule,NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 
@@ -48,7 +48,6 @@ const ALERTS: Alert[] = [
   imports: [NgbAlertModule, NgbModule, CommonModule],
   templateUrl: './notification-log.component.html',
   styleUrls: ['./notification-log.component.scss'],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class NotificationLogComponent {
   alerts: Alert[] = ALERTS;
