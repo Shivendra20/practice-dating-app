@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { AcountsService } from './_services/acounts.service';
+import { AccountService } from './_services/acounts.service';
 import { User } from './_models/user';
 
 @Component({
@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private accountsService:AcountsService,
+    private accountsService:AccountService,
     ) {}
 
   ngOnInit(): void {

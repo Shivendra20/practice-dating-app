@@ -10,15 +10,15 @@ import { BsDropdownDirective, BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationLogComponent } from "./notification-log/notification-log.component";
-import { BodyComponent } from './body/body.component';
 import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         NavComponent,
-        BodyComponent,
-        HomeComponent
+        HomeComponent,
+        RegisterComponent
     ],
     providers: [BsDropdownDirective, NgbModule],
     bootstrap: [AppComponent],

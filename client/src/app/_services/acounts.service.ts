@@ -6,7 +6,7 @@ import { User } from '../_models/user';
 @Injectable({
   providedIn: 'root'
 })
-export class AcountsService {
+export class AccountService {
  
   constructor(private http: HttpClient){}
 
@@ -26,6 +26,19 @@ export class AcountsService {
         }
       } )
     );
+ }
+
+ register(model: any)
+ {
+   return this.http.post<User>(this.baseUrl + "accounts/register", model).pipe(
+     map(user => {
+      if(user)
+      {
+        localStorage.setItem('user',JSON.stringify(user));
+        this.currentUserSource.next(user);
+      }
+     })
+   )
  }
 
   logout() 

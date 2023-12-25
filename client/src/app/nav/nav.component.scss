@@ -1,14 +1,45 @@
-.nav-back {
- background-color: #087990 !important;
+.container { 
+  max-width: 1450px !important;
+} 
+
+.custom-navbar {
+  /* Multiple linear gradients creating a multicolor effect */
+  background-image: 
+  linear-gradient(to right,#FFFBEB, #ECC9EE, #FDE2F3),
+  linear-gradient(to left, #917FB3, #E5BEEC, #FDE2F3,); 
+  background-size: 60% 100%, 50% 100%;
+  background-position: left bottom, right bottom;
+  background-repeat: no-repeat;
 }
+
+.colorful-text {
+  font-size: 27px; /* Adjust the font size as needed */
+}
+
+/* Assigning different colors to each character */
+.char1 { color: #132043; }
+.char2 { color: #132043; }
+.char3 { color: #7895CB; }
+.char4 { color: #7895CB; }
+.char5 { color: #A0BFE0; }
+.char6 { color: #A0BFE0; }
+.char7 { color: #C5DFF8; }
+.char8 { color: #FB2576; }
+.char9 { color: #FB2576; }
+.char10 { color: #FE91CA; }
+
+
 
 .navbar-brand {
  font-family: cursive;
  font-weight: bold;
- color: #FFCC70;
  position: relative;
- left: -6%;
  font-size: 30px;
+}
+
+.Welcome-text
+{
+  color: #FFFF !important;
 }
 
 input.pw {
