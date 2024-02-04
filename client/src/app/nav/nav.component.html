@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md fixed-top custom-navbar">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" routerLink="/">
         <div class="colorful-text">
           <span class="char1">D</span>
           <span class="char2">a</span>
@@ -12,52 +12,50 @@
           <span class="char8">A</span>
           <span class="char9">p</span>
           <span class="char10">p</span>
-        </div>        
+        </div>
       </a>
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Matches</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link">List</a>
-          </li>
-          <li *ngIf="currentUser$ | async" class="nav-item">
-            <a class="nav-link" (click)="logout()">Logout</a>
-          </li>
+          <ng-container *ngIf="currentUser$ | async">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/members" routerLinkActive="active">Matches</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/lists" routerLinkActive="active">List</a>
+            </li>
+          </ng-container>
         </ul>
-        
-         <div *ngIf="currentUser$ | async">
-
-         </div>
 
         <div *ngIf="currentUser$ | async" class="dropdown">
-          <a class="dropdown-toggle test-light text-decoration-none Welcome-text" dropdownToggle>Welcome {{ loggedInUser }}</a>
-          <div class="downdown-menu mt-3" *dropdownMenu>
-            <a class="dropdown-item">Edit Profile</a>
-            <a class="dropdown-item" (click)="logout()">Logout</a>
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome {{ loggedInUser | lowercase }}</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Edit Profile</a>
+            <a class="dropdown-item" href="#" (click)="logout()">Logout</a>
           </div>
         </div>
 
         <form *ngIf="!(currentUser$ | async)" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
-          <input 
+          <input
             name="Username"
-            class="form-control me-2" 
+            class="form-control me-2"
             type="text"
             placeholder="Username"
             [(ngModel)]="model.userName"
             [ngModelOptions]="{standalone: true}"
           >
-          <input 
+          <input
             name="password"
             class="form-control me-2 pw"
-            type="text" 
+            type="text"
             placeholder="Password"
             [(ngModel)]="model.Password"
           >
           <button class="btn btn-outline-success btn-login" type="submit">Login</button>
         </form>
+        <!-- <button *ngIf="currentUser$ | async" class="btn btn-outline-success ml-4" (click)="logout()">
+          Logout
+         </button> -->
       </div>
   </nav>

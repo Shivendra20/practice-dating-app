@@ -30,6 +30,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootswatch/dist/united/bootstrap.css",
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "node_modules/bootswatch/dist/minty/bootstrap.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "tailwindcss/base.css",
+              "tailwindcss/components.css",
+              "tailwindcss/utilities.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -93,12 +101,16 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/scss/bootstrap.min.scss",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "./node_modules/font-awesome/scss/font-awesome.min.css",
-              "./node_modules/bootstrap/dist/scss/bootstrap.min.scss",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "../node_modules/jquery/dist/jquery.min.js",
+              "../node_modules/popper.js/dist/umd/popper.min.js",
+              "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           }
         }
       }
