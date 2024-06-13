@@ -1,3 +1,8 @@
 {
-    "dotnet.defaultSolution": "dating-app.sln"
+    "dotnet.defaultSolution": "dating-app.sln",
+    "angular-schematics.schematicsDefaultOptions": {
+        "angular-*": {
+            "style": "scss"
+        }
+    }
 }
