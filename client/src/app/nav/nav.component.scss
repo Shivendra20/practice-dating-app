@@ -1,12 +1,12 @@
-.container { 
+.container {
   max-width: 1450px !important;
-} 
+}
 
 .custom-navbar {
   /* Multiple linear gradients creating a multicolor effect */
-  background-image: 
+  background-image:
   linear-gradient(to right,#FFFBEB, #ECC9EE, #FDE2F3),
-  linear-gradient(to left, #917FB3, #E5BEEC, #FDE2F3,); 
+  linear-gradient(to left, #917FB3, #E5BEEC, #FDE2F3,);
   background-size: 60% 100%, 50% 100%;
   background-position: left bottom, right bottom;
   background-repeat: no-repeat;
@@ -46,10 +46,43 @@ input.pw {
   -webkit-text-security: disc;
 }
 
+.btn-logout {
+  background-color: rgb(3, 53, 3);
+  color: #ffff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease-out;
+}
+
+.btn-logout :hover {
+  background-color: #2980b9 !important;
+  transform: scale(0.1) !important;/* Optional: Scale the button slightly on hover */
+}
+
 .btn-login {
-  background-color: #DAFFFB !important;
+  background-color: #FB2576;
+  color: #ffff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease-out;
 }
 
 .btn-login :hover {
-     background-color: #0F2C59 !important;
+  background-color: #2980b9;
+  transform: scale(0.1)  /* Optional: Scale the button slightly on hover */
+}
+
+.btn {
+  border: none;
+}
+
+.btn:hover {
+  background-color: #337357 !important;
+  transform: scale(1.1); /* Optional: Scale the button slightly on hover */
 }

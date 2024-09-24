@@ -31,8 +31,8 @@ namespace API.Controllers
              var user = new AppUser
              {
                 UserName = registerDto.Username.ToLower(),
-                passwardHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
-                passwordSalt = hmac.Key
+                PasswardHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
+                PasswordSalt = hmac.Key
              };
 
              _context.Users.Add(user);
@@ -49,12 +49,12 @@ namespace API.Controllers
 
             if(user == null) return Unauthorized();
 
-            using var hmac = new HMACSHA512(user.passwordSalt);
+            using var hmac = new HMACSHA512(user.PasswordSalt);
             var computeHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
 
            for (int i = 0; i < computeHash.Length; i++)
            {
-            if(computeHash[i] != user.passwardHash[i]) return Unauthorized("invailid passward");
+            if(computeHash[i] != user.PasswardHash[i]) return Unauthorized("invailid passward");
            }
            
            return new UserDTO

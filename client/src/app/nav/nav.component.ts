@@ -28,8 +28,9 @@ export class NavComponent implements OnInit {
       this.currentUser$ = this.accountService.currentUser$;
       this.currentUser$.subscribe({
       next: val => {
-        if(val?.userName)
-        this.loggedInUser = val?.userName;
+        if(val?.username)
+        this.loggedInUser = val?.username;
+       //console.log(val);
       }
       });
   }

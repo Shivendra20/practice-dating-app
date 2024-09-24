@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from '../_services/acounts.service';
 
 @Component({
   selector: 'app-home',
@@ -7,21 +8,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  registerMode = false;
+  registerMode = true;
   users : any;
+  currentUser$: any;
+  loggedInUser: any;
 
   constructor(
     private http: HttpClient,
+    private accountService: AccountService,
     ) {}
 
   ngOnInit(): void {
-      this.getUsers();
+     // this.getUsers();
+     this.currentUser$ = this.accountService.currentUser$;
+     this.currentUser$.subscribe({
+     next: (val: any) => {
+       if(val?.username)
+        {
+          this.registerMode = false;
+          this.loggedInUser = val?.username;
+        }
+      //console.log(val);
+     }
+     });
   }
 
   getUsers()
   {
     this.http.get('http://localhost:5001/api/users').subscribe({
-      next: (response) =>{ this.users = response },
+      next: (response) =>{ this.users = response;
+       // console.log(this.users);
+       },
       error: (error)=>{ console.log(error); },
       complete: () => { console.log('Request has completed.') },
     });
@@ -33,6 +50,7 @@ export class HomeComponent implements OnInit {
   }
 
   cancelRegisterMode(event: boolean) {
+    console.log(event);
     this.registerMode = event;
     }
 

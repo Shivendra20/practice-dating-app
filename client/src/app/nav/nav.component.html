@@ -29,7 +29,7 @@
         </ul>
 
         <div *ngIf="currentUser$ | async" class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome {{ loggedInUser | lowercase }}</button>
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome {{ loggedInUser }}</button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="#">Edit Profile</a>
             <a class="dropdown-item" href="#" (click)="logout()">Logout</a>
@@ -54,8 +54,8 @@
           >
           <button class="btn btn-outline-success btn-login" type="submit">Login</button>
         </form>
-        <!-- <button *ngIf="currentUser$ | async" class="btn btn-outline-success ml-4" (click)="logout()">
+        <button *ngIf="currentUser$ | async" class="btn btn-outline-success ml-4 btn-logout" (click)="logout()">
           Logout
-         </button> -->
+         </button>
       </div>
   </nav>
