@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { NgbAlertModule,NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 
 interface Alert {
@@ -45,7 +45,7 @@ const ALERTS: Alert[] = [
 @Component({
   selector: 'app-notification-log',
   standalone: true,
-  imports: [NgbAlertModule, NgbModule, CommonModule],
+  imports: [NgbAlertModule, NgbModule],
   templateUrl: './notification-log.component.html',
   styleUrls: ['./notification-log.component.scss'],
 })

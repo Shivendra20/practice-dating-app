@@ -19,18 +19,23 @@ export class HomeComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-     // this.getUsers();
      this.currentUser$ = this.accountService.currentUser$;
+     console.log('this.currentUser$: ', this.currentUser$);
+     console.log('registerMode', this.registerMode);
      this.currentUser$.subscribe({
      next: (val: any) => {
        if(val?.username)
         {
           this.registerMode = false;
-          this.loggedInUser = val?.username;
+          this.loggedInUser = val?.userName;
         }
-      //console.log(val);
      }
      });
+  }
+
+  ngOnChanges()
+  {
+    console.log(this.registerMode);
   }
 
   getUsers()

@@ -62,6 +62,27 @@ input.pw {
   transform: scale(0.1) !important;/* Optional: Scale the button slightly on hover */
 }
 
+.auth-buttons {
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn-signup {
+  background-color: #FB2576;
+  color: #ffff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease-out;
+}
+
+.btn-signup:hover {
+  background-color: #2980b9;
+  transform: scale(0.1)  /* Optional: Scale the button slightly on hover */
+}
+
 .btn-login {
   background-color: #FB2576;
   color: #ffff;

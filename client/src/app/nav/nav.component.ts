@@ -4,6 +4,9 @@ import { User } from '../_models/user';
 import { Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { EditProfileComponent } from '../edit-profile/edit-profile.component';
+import { RegisterComponent } from '../register/register.component';
 
 @Component({
   selector: 'app-nav',
@@ -18,6 +21,7 @@ export class NavComponent implements OnInit {
   loggedInUser: string = '';
 
   constructor(
+    private modalService: NgbModal,
     private accountService: AccountService,
     private router: Router,
     private toastr: ToastrService,
@@ -28,12 +32,29 @@ export class NavComponent implements OnInit {
       this.currentUser$ = this.accountService.currentUser$;
       this.currentUser$.subscribe({
       next: val => {
-        if(val?.username)
-        this.loggedInUser = val?.username;
-       //console.log(val);
+    console.log('val: ', val);
+
+        if(val?.userName)
+        this.loggedInUser = val?.userName;
+      console.log('val?.username;: ', val?.userName);
       }
       });
   }
+
+  edit()
+  {
+    this.modalService.open(EditProfileComponent, {
+      windowClass: 'custome-class',
+      backdrop: 'static'
+    });
+   }
+
+   signIn() {
+    this.modalService.open(RegisterComponent, {
+      windowClass: 'custome-class',
+      backdrop: 'static'
+    });
+   }
 
   login()
   {

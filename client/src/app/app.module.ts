@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { NavComponent } from './nav/nav.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';  // Just import NgbModule
 import { NotificationLogComponent } from "./notification-log/notification-log.component";
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
@@ -18,27 +18,29 @@ import { TestErrorComponent } from './errors/test-error/test-error.component';
 import { ErrorInterceptor } from './_interceptors/error.interceptor';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        NavComponent,
-        HomeComponent,
-        RegisterComponent,
-        MemberListComponent,
-        MemberDetailComponent,
-        ListsComponent,
-        MessagesComponent,
-        TestErrorComponent
-    ],
-    providers: [NgbModule, { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}],
-    bootstrap: [AppComponent],
-    imports: [
-        FormsModule,
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        NotificationLogComponent,
-        SharedModule
-    ]
-
+  declarations: [
+    AppComponent,
+    NavComponent,
+    HomeComponent,
+    RegisterComponent,
+    MemberListComponent,
+    MemberDetailComponent,
+    ListsComponent,
+    MessagesComponent,
+    TestErrorComponent
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
+  bootstrap: [AppComponent],
+  imports: [
+    FormsModule,
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    HttpClientModule,
+    NotificationLogComponent,
+    SharedModule
+  ]
 })
 export class AppModule { }
