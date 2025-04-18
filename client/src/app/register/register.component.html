@@ -1,0 +1,29 @@
+<div class="d-flex position-relative">
+ <!-- <video autoplay loop muted playsinline src="https://d33vw3iu5hs0zi.cloudfront.net/media/exness_224a0d0a86.mp4" data-testid="header:video" class="video-background"></video> -->
+  <form #registerForm="ngForm" (ngSubmit)="onRegister()" autocomplete="off" class="position-relative z-index-1">
+    <h2 class="text-center text-primary mb-2 signup-text">Sign up</h2>
+    <div class="mb-2">
+      <input type="text"
+          class="form-control mb-1"
+          name="username"
+          [(ngModel)]="model.userName"
+          placeholder="Username"
+          >
+          <input type="password"
+          class="form-control"
+          name="password"
+          [(ngModel)]="model.password"
+          placeholder="Password"
+          >
+    </div>
+    <div class="text-center d-inline-flex justify-content-end w-100">
+      <div class="me-auto"></div>
+      <div class="me-2">
+        <button class="btn btn-success btn-register" type="submit">Register</button>
+      </div>
+      <div>
+        <button class="btn btn-outline-primary" type="button" (click)="onCancel()">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>

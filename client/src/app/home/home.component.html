@@ -1,0 +1,18 @@
+<div class="container">
+  @if (!registerMode) {
+    <div style="text-align: center;">
+      <h1>Find your match</h1>
+      <p class="lead">Come on in to view your matches....all you need to do is sign up!</p>
+    </div>
+  }
+
+  @if (registerMode) {
+    <div class="container">
+      <div class="row justify-content-center">
+        <app-register
+          (cancelRegister)="cancelRegisterMode($event)"
+        ></app-register>
+      </div>
+    </div>
+  }
+</div>
