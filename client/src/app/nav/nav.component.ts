@@ -9,9 +9,10 @@ import { EditProfileComponent } from '../edit-profile/edit-profile.component';
 import { RegisterComponent } from '../register/register.component';
 
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss']
+    selector: 'app-nav',
+    templateUrl: './nav.component.html',
+    styleUrls: ['./nav.component.scss'],
+    standalone: false
 })
 
 export class NavComponent implements OnInit {

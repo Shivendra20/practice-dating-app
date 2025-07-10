@@ -43,11 +43,10 @@ const ALERTS: Alert[] = [
 ];
 
 @Component({
-  selector: 'app-notification-log',
-  standalone: true,
-  imports: [NgbAlertModule, NgbModule],
-  templateUrl: './notification-log.component.html',
-  styleUrls: ['./notification-log.component.scss'],
+    selector: 'app-notification-log',
+    imports: [NgbAlertModule, NgbModule],
+    templateUrl: './notification-log.component.html',
+    styleUrls: ['./notification-log.component.scss']
 })
 export class NotificationLogComponent {
   alerts: Alert[] = ALERTS;
