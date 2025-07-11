@@ -1,7 +1,7 @@
 module.exports = {
   darkMode: 'class',
   plugins: [
-    require('tailwindcss'),
+    require('@tailwindcss/postcss'),
     require('autoprefixer'),
 ],
 }
