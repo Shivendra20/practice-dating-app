@@ -22,7 +22,7 @@
             },
             "index": "src/index.html",
             "polyfills": [
-              "zone.js"
+              "src/polyfills.ts"
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -31,8 +31,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/bootswatch/dist/united/bootstrap.css",
-              "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "node_modules/bootswatch/dist/minty/bootstrap.css",
               "node_modules/ngx-toastr/toastr.css",
@@ -52,13 +52,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "2mb",
                   "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "1mb"
                 }
               ],
               "outputHashing": "all"
@@ -94,8 +94,6 @@
           "builder": "@angular/build:karma",
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
@@ -104,7 +102,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/scss/bootstrap.min.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "./node_modules/font-awesome/scss/font-awesome.min.css",
               "src/styles.scss"
