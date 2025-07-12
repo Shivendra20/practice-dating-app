@@ -3,42 +3,66 @@
 }
 
 .custom-navbar {
-  /* Multiple linear gradients creating a multicolor effect */
   background-image:
-  linear-gradient(to right,#FFFBEB, #ECC9EE, #FDE2F3),
-  linear-gradient(to left, #917FB3, #E5BEEC, #FDE2F3,);
+    linear-gradient(to right, #FFFBEB, #ECC9EE, #FDE2F3),
+    linear-gradient(to left, #917FB3, #E5BEEC, #FDE2F3, );
   background-size: 60% 100%, 50% 100%;
   background-position: left bottom, right bottom;
   background-repeat: no-repeat;
 }
 
 .colorful-text {
-  font-size: 27px; /* Adjust the font size as needed */
+  font-size: 27px;
 }
 
-/* Assigning different colors to each character */
-.char1 { color: #132043; }
-.char2 { color: #132043; }
-.char3 { color: #7895CB; }
-.char4 { color: #7895CB; }
-.char5 { color: #A0BFE0; }
-.char6 { color: #A0BFE0; }
-.char7 { color: #C5DFF8; }
-.char8 { color: #FB2576; }
-.char9 { color: #FB2576; }
-.char10 { color: #FE91CA; }
+.char1 {
+  color: #132043;
+}
 
+.char2 {
+  color: #132043;
+}
 
+.char3 {
+  color: #7895CB;
+}
+
+.char4 {
+  color: #7895CB;
+}
+
+.char5 {
+  color: #A0BFE0;
+}
+
+.char6 {
+  color: #A0BFE0;
+}
+
+.char7 {
+  color: #C5DFF8;
+}
+
+.char8 {
+  color: #FB2576;
+}
+
+.char9 {
+  color: #FB2576;
+}
+
+.char10 {
+  color: #FE91CA;
+}
 
 .navbar-brand {
- font-family: cursive;
- font-weight: bold;
- position: relative;
- font-size: 30px;
+  font-family: cursive;
+  font-weight: bold;
+  position: relative;
+  font-size: 30px;
 }
 
-.Welcome-text
-{
+.Welcome-text {
   color: #FFFF !important;
 }
 
@@ -59,19 +83,20 @@ input.pw {
 
 .btn-logout :hover {
   background-color: #2980b9 !important;
-  transform: scale(0.1) !important;/* Optional: Scale the button slightly on hover */
+  transform: scale(0.1) !important;
 }
 
 .auth-buttons {
   justify-content: space-between;
-  gap: 10px;
+  gap: 5px;
+  height: 50px;
 }
 
 .btn-signup {
   background-color: #FB2576;
   color: #ffff;
-  font-size: 16px;
-  padding: 10px 20px;
+  font-size: 12px;
+  width: 150px;
   border: none;
   cursor: pointer;
   border-radius: 4px;
@@ -80,14 +105,14 @@ input.pw {
 
 .btn-signup:hover {
   background-color: #2980b9;
-  transform: scale(0.1)  /* Optional: Scale the button slightly on hover */
+  transform: scale(0.1)
 }
 
 .btn-login {
   background-color: #FB2576;
   color: #ffff;
-  font-size: 16px;
-  padding: 10px 20px;
+  font-size: 12px;
+  width: 150px;
   border: none;
   cursor: pointer;
   border-radius: 4px;
@@ -96,7 +121,7 @@ input.pw {
 
 .btn-login :hover {
   background-color: #2980b9;
-  transform: scale(0.1)  /* Optional: Scale the button slightly on hover */
+  transform: scale(0.1)
 }
 
 .btn {
@@ -105,5 +130,5 @@ input.pw {
 
 .btn:hover {
   background-color: #337357 !important;
-  transform: scale(1.1); /* Optional: Scale the button slightly on hover */
+  transform: scale(1.1);
 }

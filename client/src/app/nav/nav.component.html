@@ -15,58 +15,41 @@
       </div>
     </a>
     <ul class="navbar-nav me-auto mb-2 mb-md-0">
-      @if (currentUser$ | async) {
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="/members" routerLinkActive="active">Matches</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/lists" routerLinkActive="active">List</a>
-        </li>
+      @if (currentUser()) {
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" routerLink="/members" routerLinkActive="active">Matches</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/lists" routerLinkActive="active">List</a>
+      </li>
       }
     </ul>
 
-    @if (currentUser$ | async) {
-      <div class="dropdown" ngbDropdown>
-        <button class="btn btn-secondary" id="dropdownMenuButton" ngbDropdownToggle>
-          Welcome {{ loggedInUser }}
-        </button>
-        <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#" (click)="edit()">Edit Profile</a>
-          <a class="dropdown-item" href="#" (click)="logout()">Logout</a>
-        </div>
-      </div>
-    }
-
-
-    @if (!(currentUser$ | async)) {
-      <div class="d-flex auth-buttons">
-        <input
-          name="Username"
-          class="form-control me-2"
-          type="text"
-          placeholder="Username"
-          [(ngModel)]="model.userName"
-          [ngModelOptions]="{standalone: true}"
-          >
-        <input
-          name="password"
-          class="form-control me-2 pw"
-          type="text"
-          placeholder="Password"
-          [(ngModel)]="model.Password"
-          [ngModelOptions]="{standalone: true}"
-          >
-        <button class="btn btn-outline-success btn-login" (click)="login()" type="submit">Login</button>
-        <button class="btn btn-outline-success btn-signup" (click)="signIn()" type="submit">Sign In</button>
-      </div>
-    }
-    @if (currentUser$ | async) {
-      <button class="btn btn-outline-success ml-4 btn-logout" (click)="logout()">
-        Logout
+    @if (currentUser()) {
+    <div class="dropdown" ngbDropdown>
+      <button class="btn btn-secondary" id="dropdownMenuButton" ngbDropdownToggle>
+        Welcome {{ loggedInUser }}
       </button>
+      <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#" (click)="edit()">Edit Profile</a>
+        <a class="dropdown-item" href="#" (click)="logout()">Logout</a>
+      </div>
+    </div>
     }
+
+    @if (!(currentUser())) {
+    <div class="d-flex auth-buttons">
+      <input name="Username" class="form-control me-2" type="text" placeholder="Username" [(ngModel)]="model.userName"
+        [ngModelOptions]="{standalone: true}">
+      <input name="password" class="form-control me-2 pw" type="text" placeholder="Password"
+        [(ngModel)]="model.Password" [ngModelOptions]="{standalone: true}">
+      <button class="btn btn-outline-success btn-login" (click)="login()" type="submit">Login</button>
+      <button class="btn btn-outline-success btn-signup" (click)="registerNewUser()" type="submit">Register</button>
+    </div>
+    }
+
   </div>
 </nav>
