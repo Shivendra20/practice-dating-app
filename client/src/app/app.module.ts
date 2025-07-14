@@ -22,7 +22,6 @@ import { ErrorInterceptor } from './_interceptors/error.interceptor';
         NavComponent,
         HomeComponent,
         RegisterComponent,
-        MemberListComponent,
         MemberDetailComponent,
         ListsComponent,
         MessagesComponent,

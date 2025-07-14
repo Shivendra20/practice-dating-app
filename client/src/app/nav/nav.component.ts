@@ -51,7 +51,7 @@ ngOnInit(): void {
   login() {
     this.accountService.login(this.model).subscribe({
       next: () => {
-        this.router.navigateByUrl('/members');
+        this.router.navigateByUrl('/dashboard');
         this.toastr.success("Logged In successfully.")
       }
     });

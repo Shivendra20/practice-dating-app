@@ -17,9 +17,9 @@ namespace API.Data
          return await _context.Users.ToListAsync();   
         }
 
-        public async Task<AppUser> GetAppUserByNameAsync(string userName)
+        public async Task<AppUser> GetAppUserByNameAsync(string DisplayName)
         {
-         return await _context.Users.SingleOrDefaultAsync(u => u.UserName == userName);
+         return await _context.Users.SingleOrDefaultAsync(u => u.DisplayName == DisplayName);
         }
 
         public async Task<AppUser> GetByIdAsync(int id)

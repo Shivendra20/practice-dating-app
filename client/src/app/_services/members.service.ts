@@ -12,7 +12,7 @@ export class MembersService {
 
 
   getMembers() {
-    return this.http.get<Member[]>(this.baseUrl + 'members', this.getHttpOptions());
+    return this.http.get<any>(this.baseUrl + 'members', this.getHttpOptions());
   }
 
   getMeber(id: string) {
