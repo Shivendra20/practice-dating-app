@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   }
 
   getUsers(): void {
-    this.http.get('http://localhost:5001/api/users').subscribe({
+    this.http.get('http://localhost:5001/api/members').subscribe({
       next: (response) => {
         this.users = response;
       },

@@ -2,6 +2,7 @@ using System.Text;
 using API.Data;
 using API.Extensions;
 using API.Interface;
+using API.Interfaces;
 using API.Middleware;
 using API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -12,6 +13,9 @@ using Microsoft.IdentityModel.Tokens;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddDbContext<DataContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IMemberRepository, MemberRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddAplicationServices(builder.Configuration);
 builder.Services.AddAplicationTokenServices(builder.Configuration);
@@ -23,9 +27,9 @@ app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("ht
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication(); // Says you are allowed to do
+app.UseAuthentication(); 
 
-app.UseAuthorization(); // Says what are you allowed to do 
+app.UseAuthorization(); 
 
 app.MapControllers();
 
